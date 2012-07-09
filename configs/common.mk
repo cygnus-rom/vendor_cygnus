@@ -87,3 +87,6 @@ else
 # include definitions for SDCLANG
 include vendor/cygnus/sdclang/sdclang.mk
 endif
+
+# include additional build utilities
+include vendor/cygnus/utils.mk
