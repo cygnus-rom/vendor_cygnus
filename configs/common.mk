@@ -67,3 +67,7 @@ include vendor/cygnus/configs/props.mk
 
 # Version
 $(call inherit-product, vendor/cygnus/configs/versioning.mk)
+
+# World APN list
+PRODUCT_COPY_FILES += \
+    vendor/cygnus/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
