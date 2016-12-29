@@ -34,3 +34,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 else
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0
 endif
+
+# Allow tethering without provisioning app
+ADDITIONAL_BUILD_PROPERTIES += net.tethering.noprovisioning=true
+
+# Don't Hide APNs
+ADDITIONAL_BUILD_PROPERTIES += persist.sys.hideapn=false
