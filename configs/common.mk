@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
+# Include hostapd configuration
+PRODUCT_COPY_FILES += \
+    vendor/wave/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    vendor/wave/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    vendor/wave/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
+
 # Build Snapdragon apps
 PRODUCT_PACKAGES += \
     SnapdragonGallery
