@@ -14,5 +14,23 @@
 # limitations under the License.
 #
 
+# Build Snapdragon apps
+PRODUCT_PACKAGES += \
+    SnapdragonGallery
+
+# Include support for additional filesystems
+PRODUCT_PACKAGES += \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g
+
+# Props
+include vendor/cygnus/configs/props.mk
+
 # Version
 $(call inherit-product, vendor/cygnus/configs/versioning.mk)
