@@ -27,6 +27,9 @@ PRODUCT_COPY_FILES += \
     vendor/cygnus/prebuilt/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
+# Copy cygnus specific init file
+PRODUCT_COPY_FILES += vendor/cygnus/prebuilt/root/init.cygnus.rc:root/init.cygnus.rc
+
 # Include hostapd configuration
 PRODUCT_COPY_FILES += \
     vendor/cygnus/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
