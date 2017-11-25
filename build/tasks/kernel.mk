@@ -425,4 +425,7 @@ endif
 .PHONY: kernel
 kernel: $(INSTALLED_KERNEL_TARGET)
 
+.PHONY: dtbo
+dtbo: $(INSTALLED_DTBOIMAGE_TARGET)
+
 endif # TARGET_NO_KERNEL
