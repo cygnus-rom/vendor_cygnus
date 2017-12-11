@@ -79,7 +79,6 @@ BOARD_USES_QTI_HARDWARE := true
     endif
     endif
     endif
->>>>>>> 73296f14... soong_config: Add TARGET_USES_QCOM_BSP_LEGACY
 
 $(call set-device-specific-path,AUDIO,audio,hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT))
 $(call set-device-specific-path,DISPLAY,display,hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT))
