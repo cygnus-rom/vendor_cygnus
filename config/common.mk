@@ -69,6 +69,14 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
 
+# exFAT tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    mkfs.exfat
+
+# Media
+PRODUCT_GENERIC_PROPERTIES += \
+    media.recorder.show_manufacturer_and_model=true
 
 
 # Include vendor SEPolicy changes
