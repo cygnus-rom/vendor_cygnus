@@ -124,3 +124,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/rockstar/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
+ifneq ($(HOST_OS),linux)
+ifneq ($(sdclang_already_warned),true)
+$(warning **********************************************)
+$(warning * SDCLANG is not supported on non-linux hosts.)
+$(warning **********************************************)
+sdclang_already_warned := true
+endif
+else
+# include definitions for SDCLANG
+include vendor/rockstar/sdclang/sdclang.mk
+endif
