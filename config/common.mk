@@ -64,6 +64,13 @@ PRODUCT_COPY_FILES += \
     vendor/rockstar/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
 
 
+# We modify several neverallows, so let the build proceed
+ifneq ($(TARGET_BUILD_VARIANT),user)
+SELINUX_IGNORE_NEVERALLOWS := true
+endif
+
+
+
 # Include vendor SEPolicy changes
 
 include vendor/rockstar/sepolicy/sepolicy.mk
