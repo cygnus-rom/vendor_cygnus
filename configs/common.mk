@@ -14,11 +14,24 @@
 # limitations under the License.
 #
 
+# Include support for GApps backup
+PRODUCT_COPY_FILES += \
+    vendor/cygnus/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/cygnus/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/cygnus/prebuilt/bin/50-backuptool.sh:system/addon.d/50-backuptool.sh
+
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/cygnus/prebuilt/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/cygnus/prebuilt/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/cygnus/prebuilt/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 # Include hostapd configuration
 PRODUCT_COPY_FILES += \
-    vendor/wave/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-    vendor/wave/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
-    vendor/wave/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
+    vendor/cygnus/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    vendor/cygnus/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    vendor/cygnus/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
 
 # Build Snapdragon apps
 PRODUCT_PACKAGES += \
