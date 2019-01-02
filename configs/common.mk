@@ -112,3 +112,8 @@ include external/inter-fonts/fonts.mk
 
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
+
+# Disable Java debug info
+USE_DEX2OAT_DEBUG := false
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
