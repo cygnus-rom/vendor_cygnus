@@ -35,4 +35,14 @@ export ROCKSTAR_VERSION := Rockstar-Beta
 export ROM_VERSION := $(ROCKSTAR_VERSION)-$(shell date -u +%Y%m%d)
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.modversion=$(ROM_VERSION) \
+
     ro.rockstar.version=$(ROCKSTAR_VERSION)
+
+
+# Default notification/alarm sounds
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.config.notification_sound=Popcorn.ogg \
+    ro.config.alarm_alert=Bright_morning.ogg \
+    ro.config.ringtone=Titania.ogg
+
+
