@@ -36,3 +36,16 @@ export VENDOR := rockstar
 PRODUCT_PACKAGES += \
     SnapdragonGallery \
     SnapdragonMusic
+
+# Include support for GApps backup
+PRODUCT_COPY_FILES += \
+    vendor/rockstar/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/rockstar/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/rockstar/prebuilt/bin/50-backuptool.sh:system/addon.d/50-backuptool.sh
+
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/rockstar/prebuilt/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/rockstar/prebuilt/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/rockstar/prebuilt/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
