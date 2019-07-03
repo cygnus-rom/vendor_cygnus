@@ -58,3 +58,8 @@ PRODUCT_COPY_FILES += \
     vendor/rockstar/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
     vendor/rockstar/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
     vendor/rockstar/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
+
+
+# Include vendor SEPolicy changes
+include vendor/rockstar/sepolicy/sepolicy.mk
+
