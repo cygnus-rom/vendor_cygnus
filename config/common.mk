@@ -18,6 +18,9 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:s
 # Include APN information
 PRODUCT_COPY_FILES += vendor/rockstar/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
+# Copy init file
+PRODUCT_COPY_FILES += vendor/rockstar/prebuilt/root/init.rockstar.rc:root/init.rockstar.rc
+
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG := false
 
