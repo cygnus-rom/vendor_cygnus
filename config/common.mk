@@ -76,11 +76,6 @@ endif
 include vendor/rockstar/sepolicy/sepolicy.mk
 
 
-
-# TCP Connection Management
-PRODUCT_PACKAGES += tcmiface
-PRODUCT_BOOT_JARS += tcmiface
-
 # RCS Service
 PRODUCT_PACKAGES += \
     rcscommon \
@@ -115,4 +110,9 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     ntfsfix \
     ntfs-3g
+
+
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/rockstar/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
