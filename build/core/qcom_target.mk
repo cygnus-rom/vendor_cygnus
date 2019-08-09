@@ -1,9 +1,5 @@
-define wlan-set-path-variant
-$(call project-set-path-variant,wlan,TARGET_WLAN_VARIANT,hardware/qcom/$(1))
-endef
-define bt-vendor-set-path-variant
-$(call project-set-path-variant,bt-vendor,TARGET_BT_VENDOR_VARIANT,hardware/qcom/$(1))
-endef
+# Bring in Qualcomm helper macros
+include vendor/rockstar/build/core/qcom_utils.mk
 
 # Set device-specific HALs into project pathmap
 define set-device-specific-path
@@ -15,47 +11,89 @@ $(if $(USE_DEVICE_SPECIFIC_$(1)), \
 $(call project-set-path,qcom-$(2),$(strip $(path)))
 endef
 
-ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-BOARD_USES_QTI_HARDWARE := true
+# Platform names
+MSMNILE := msmnile #SM8150
+MSMSTEPPE := sm6150
+TRINKET := trinket #SM6125
 
-$(call set-device-specific-path,AUDIO,audio,hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT))
-$(call set-device-specific-path,DISPLAY,display,hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT))
-$(call set-device-specific-path,MEDIA,media,hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT))
+B_FAMILY := msm8226 msm8610 msm8974
+B64_FAMILY := msm8992 msm8994
+BR_FAMILY := msm8909 msm8916
+UM_3_18_FAMILY := msm8937 msm8953 msm8996
+UM_4_4_FAMILY := msm8998 sdm660
+UM_4_9_FAMILY := sdm845 sdm710
+UM_4_14_FAMILY := $(MSMNILE) $(MSMSTEPPE) $(TRINKET)
+UM_PLATFORMS := $(UM_3_18_FAMILY) $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)
 
-$(call set-device-specific-path,CAMERA,camera,hardware/qcom/camera)
+# UM platforms no longer need this set on O+
+ifneq ($(call is-board-platform-in-list, $(UM_PLATFORMS)),true)
+    TARGET_USES_QCOM_BSP := true
+endif
+
+# Flags for legacy SOCs
+ifneq ($(filter msm7x27a msm7x30 msm8660 msm8960,$(TARGET_BOARD_PLATFORM)),)
+    TARGET_USES_QCOM_BSP_LEGACY := true
+    # Enable legacy audio functions
+    ifeq ($(BOARD_USES_LEGACY_ALSA_AUDIO),true)
+        USE_CUSTOM_AUDIO_POLICY := 1
+    endif
+endif
+
+# Enable color metadata for every UM platform
+ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+    TARGET_USES_COLOR_METADATA := true
+endif
+
+# Enable DRM PP driver on UM platforms that support it
+ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)),true)
+    TARGET_USES_DRM_PP := true
+endif
+
+# List of targets that use master side content protection
+MASTER_SIDE_CP_TARGET_LIST := msm8996 $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)
+
+# Mark GRALLOC_USAGE_PRIVATE_10BIT_TP as valid gralloc bits on UM platforms that support it
+ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)),true)
+    TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 27)
+endif
+
+# Set QCOM_HARDWARE_VARIANT
+ifeq ($(call is-board-platform-in-list, $(B_FAMILY)),true)
+    MSM_VIDC_TARGET_LIST := $(B_FAMILY)
+    QCOM_HARDWARE_VARIANT := msm8974
+else
+ifeq ($(call is-board-platform-in-list, $(B64_FAMILY)),true)
+    MSM_VIDC_TARGET_LIST := $(B64_FAMILY)
+    QCOM_HARDWARE_VARIANT := msm8994
+else
+ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
+    MSM_VIDC_TARGET_LIST := $(BR_FAMILY)
+    QCOM_HARDWARE_VARIANT := msm8916
+else ifneq ($(filter $(UM_4_14_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+    MSM_VIDC_TARGET_LIST := $(UM_4_14_FAMILY)
+    QCOM_HARDWARE_VARIANT := sm8150
+else
+    MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
+    QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
+endif
+endif
+endif
+
+# Set soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/audio/$(QCOM_HARDWARE_VARIANT) \
+    hardware/qcom/display/$(QCOM_HARDWARE_VARIANT) \
+    hardware/qcom/media/$(QCOM_HARDWARE_VARIANT)
+
+# Set HAL paths
+$(call set-device-specific-path,AUDIO,audio,hardware/qcom/audio/$(QCOM_HARDWARE_VARIANT))
+$(call set-device-specific-path,DISPLAY,display,hardware/qcom/display/$(QCOM_HARDWARE_VARIANT))
+$(call set-device-specific-path,MEDIA,media,hardware/qcom/media/$(QCOM_HARDWARE_VARIANT))
+
 $(call set-device-specific-path,DATA_IPA_CFG_MGR,data-ipa-cfg-mgr,vendor/qcom/opensource/data-ipa-cfg-mgr)
 $(call set-device-specific-path,GPS,gps,hardware/qcom/gps)
-$(call set-device-specific-path,SENSORS,sensors,hardware/qcom/sensors)
 $(call set-device-specific-path,LOC_API,loc-api,vendor/qcom/opensource/location)
 $(call set-device-specific-path,DATASERVICES,dataservices,vendor/qcom/opensource/dataservices)
-$(call set-device-specific-path,POWER,power,hardware/qcom/power)
-$(call set-device-specific-path,THERMAL,thermal,hardware/qcom/thermal)
+$(call set-device-specific-path,POWER,power,vendor/qcom/opensource/power)
+$(call set-device-specific-path,THERMAL,thermal,vendor/qcom/opensource/thermal-hal)
 $(call set-device-specific-path,VR,vr,hardware/qcom/vr)
-
-ifeq ($(BOARD_USES_AOSP_WLAN_HAL),true)
-$(call wlan-set-path-variant,wlan)
-else
-$(call wlan-set-path-variant,wlan-caf)
-endif
-
-$(call bt-vendor-set-path-variant,bt-caf)
-
-PRODUCT_CFI_INCLUDE_PATHS += \
-    hardware/qcom/wlan-caf/qcwcn/wpa_supplicant_8_lib
-else
-
-$(call project-set-path,qcom-audio,hardware/qcom/audio/default)
-$(call project-set-path,qcom-display,hardware/qcom/display/$(TARGET_BOARD_PLATFORM))
-$(call project-set-path,qcom-media,hardware/qcom/media/$(TARGET_BOARD_PLATFORM))
-
-$(call project-set-path,qcom-camera,hardware/qcom/camera)
-$(call project-set-path,qcom-data-ipa-cfg-mgr,hardware/qcom/data/ipacfg-mgr)
-$(call project-set-path,qcom-gps,hardware/qcom/gps)
-$(call project-set-path,qcom-sensors,hardware/qcom/sensors)
-$(call project-set-path,qcom-loc-api,vendor/qcom/opensource/location)
-$(call project-set-path,qcom-dataservices,$(TARGET_DEVICE_DIR)/dataservices)
-
-$(call wlan-set-path-variant,wlan)
-$(call bt-vendor-set-path-variant,bt)
-
-endif
