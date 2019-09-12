@@ -20,6 +20,9 @@ type Product_variables struct {
 		Cppflags []string
 		Shared_libs []string
 	}
+	Target_needs_netd_direct_connect_rule struct {
+		Cppflags []string
+	}
 }
 
 type ProductVariables struct {
@@ -29,4 +32,5 @@ type ProductVariables struct {
 	Target_shim_libs  *string `json:",omitempty"`
 	Target_uses_color_metadata  *bool `json:",omitempty"`
  	Uses_qti_camera_device  *bool `json:",omitempty"`
+	Target_needs_netd_direct_connect_rule  *bool `json:",omitempty"`
 }
