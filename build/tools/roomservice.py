@@ -31,10 +31,10 @@ DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
 custom_local_manifest = ".repo/local_manifests/cygnus_manifest.xml"
-custom_default_revision = "caf-ten"
 custom_dependencies = "cygnus.dependencies"
 org_manifest = "Cygnus-devices"  # leave empty if org is provided in manifest
 org_display = "Cygnus-devices"  # needed for displaying
+custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'caf-ten')
 
 github_auth = None
 
