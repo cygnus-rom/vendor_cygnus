@@ -1,8 +1,8 @@
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.cygnus.build.version=$(LINEAGE_VERSION) \
-    ro.cygnus.display.version=$(LINEAGE_DISPLAY_VERSION) \
+    ro.cygnus.build.version=$(CYGNUS_VERSION) \
     ro.cygnus.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(CYGNUS_VERSION)
+    ro.modversion=$(CYGNUS_VERSION) \
+    ro.cygnus.releasetype=$(CYGNUS_BUILD_TYPE)
 
 # Versioning
 ANDROID_VERSION = 10
