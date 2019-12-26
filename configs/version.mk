@@ -1,9 +1,3 @@
-ADDITIONAL_BUILD_PROPERTIES += \
-    ro.cygnus.build.version=$(CYGNUS_VERSION) \
-    ro.cygnus.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(CYGNUS_VERSION) \
-    ro.cygnus.releasetype=$(CYGNUS_BUILD_TYPE)
-
 # Versioning
 ANDROID_VERSION = 10
 PRODUCT_VERSION_MAJOR = 1
@@ -18,3 +12,8 @@ endif
 # Packaging
 LINEAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%Y%m%d)-$(CYGNUS_BUILD_TYPE)_$(PRODUCT_DEVICE)
 LINEAGE_DISPLAY_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)_$(PRODUCT_DEVICE)
+
+# Versioning Props
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.cygnus.version=$(CYGNUS_VERSION) \
+    ro.cygnus.releasetype=$(CYGNUS_BUILD_TYPE)
