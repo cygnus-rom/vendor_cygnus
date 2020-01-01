@@ -27,7 +27,7 @@ PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)
 MAIN_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%m%d%H%M)
 CAF_REV := $(shell grep "<default revision=" manifest/default.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
    ro.cygnus.version=$(CYGNUS_VERSION) \
    ro.system.cygnus.build=$(MAIN_VERSION) \
    ro.system.cygnus.releasetype=$(CYGNUS_BUILD_TYPE) \
@@ -35,9 +35,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.caf.tag=$(CAF_REV)
 
 ifeq ($(CYGNUS_BUILD_TYPE),OFFICIAL)
-   PRODUCT_PROPERTY_OVERRIDES += \
+   PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
        ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-OFF
    else
-       PRODUCT_PROPERTY_OVERRIDES += \
+       PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
          ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-UNOFF
 endif
