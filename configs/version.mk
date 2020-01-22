@@ -43,8 +43,3 @@ ifeq ($(CYGNUS_BUILD_TYPE),OFFICIAL)
 endif
 
     
-# Cygnus Extra Packages
-PRODUCT_PACKAGES += \
-	Launcher \
-	MiXplorerPrebuilt \
-	RetroMusicPlayer
