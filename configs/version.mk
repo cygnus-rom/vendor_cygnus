@@ -41,3 +41,10 @@ ifeq ($(CYGNUS_BUILD_TYPE),OFFICIAL)
        PRODUCT_PROPERTY_OVERRIDES += /
          ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-UNOFF
 endif
+
+    
+# Cygnus Extra Packages
+PRODUCT_PACKAGES += \
+	Launcher \
+	MiXplorerPrebuilt \
+	RetroMusicPlayer
