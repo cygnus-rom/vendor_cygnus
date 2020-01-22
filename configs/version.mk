@@ -18,8 +18,3 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.cygnus.version=$(CYGNUS_VERSION) \
     ro.cygnus.releasetype=$(CYGNUS_BUILD_TYPE)
     
-# Cygnus Extra Packages
-PRODUCT_PACKAGES += \
-	Launcher \
-	MiXplorerPrebuilt \
-	RetroMusicPlayer
