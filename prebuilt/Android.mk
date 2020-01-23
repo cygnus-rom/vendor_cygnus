@@ -30,7 +30,7 @@ include $(BUILD_PREBUILT)
 #Retro Music Player
 include $(CLEAR_VARS)
 LOCAL_MODULE := RetroMusicPlayer
-LOCAL_SRC_FILES := common/app/MusicPlayer.apk
+LOCAL_SRC_FILES := common/app/RetroMusicPlayer.apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
