@@ -5,4 +5,5 @@ LOCAL_PATH := $(call my-dir)
 PRODUCT_PACKAGES += \
 	Launcher \
 	MiXplorerPrebuilt \
-	RetroMusicPlayer
+	RetroMusicPlayer \
+	ViaBrowser
