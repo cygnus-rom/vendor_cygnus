@@ -64,6 +64,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     SnapdragonGallery
 
+# Offline charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+
 # Include support for additional filesystems
 PRODUCT_PACKAGES += \
     e2fsck \
