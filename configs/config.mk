@@ -7,3 +7,6 @@ PRODUCT_PACKAGES += \
 	MiXplorerPrebuilt \
 	RetroMusicPlayer \
 	ViaBrowser
+
+# Cygnus Overlays
+DEVICE_PACKAGE_OVERLAYS += vendor/cygnus/overlay/
