@@ -24,7 +24,7 @@ LOCAL_SRC_FILES := common/app/MiXplorerPrebuilt.apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := CMFileManager Amaze AmazeFM crDroidFileManager	
+LOCAL_OVERRIDES_PACKAGES := CMFileManager Amaze AmazeFM crDroidFileManager
 include $(BUILD_PREBUILT)
 
 #Retro Music Player
@@ -36,17 +36,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_OVERRIDES_PACKAGES := Music SnapdragonMusic crDroidMusic Phonograph Eleven VanillaMusic
 include $(BUILD_PREBUILT)
-
-#Pixel Launcher
-include $(CLEAR_VARS)
-LOCAL_MODULE := PixelLauncher
-LOCAL_SRC_FILES := common/priv-app/Launcher/Launcher.apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_PRIVILEGED_MODULE := true
-LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Launcher3QuickStep QuickStep
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_DEX_PREOPT := false
 
 # Via
 include $(CLEAR_VARS)
