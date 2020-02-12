@@ -20,6 +20,9 @@ include vendor/cygnus/configs/version.mk
 # Props
 include vendor/cygnus/configs/props.mk
 
+# Fonts
+include vendor/cygnus/configs/fonts.mk
+
 # Enable SIP+VoIP
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
@@ -153,3 +156,4 @@ ifeq ($(WITH_GAPPS),true)
       GAPPS_PRODUCT_PACKAGES += CalendarGooglePrebuilt
       include vendor/opengapps/build/opengapps-packages.mk
 endif
+
