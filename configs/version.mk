@@ -14,5 +14,11 @@
 # limitations under the License.
 #
 
-# Version
-$(call inherit-product, vendor/cygnus/configs/versioning.mk)
+CYGNUS_VERSION := 2.0
+
+ifndef CYGNUS_BUILD_TYPE
+   CYGNUS_BUILD_TYPE := homemade
+endif
+
+PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(TARGET_PRODUCT)-$(shell date +%Y%m%d)-$(BUILD_NUMBER)
+
