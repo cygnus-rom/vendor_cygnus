@@ -65,6 +65,10 @@ PRODUCT_PACKAGES += \
 # Props
 include vendor/cygnus/configs/props.mk
 
+# TCP Connection Management
+PRODUCT_PACKAGES += tcmiface
+PRODUCT_BOOT_JARS += tcmiface
+
 # Version
 $(call inherit-product, vendor/cygnus/configs/versioning.mk)
 
