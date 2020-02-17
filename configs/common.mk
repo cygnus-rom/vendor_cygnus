@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += tcmiface
 PRODUCT_BOOT_JARS += tcmiface
 
 # Version
-$(call inherit-product, vendor/cygnus/configs/versioning.mk)
+$(call inherit-product, vendor/cygnus/configs/version.mk)
 
 # World APN list
 PRODUCT_COPY_FILES += \
