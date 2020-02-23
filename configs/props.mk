@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Override undesired Google defaults
-ADDITIONAL_BUILD_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.wifi-watchlist=GoogleGuest \
@@ -36,7 +36,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0
 endif
 
 # Allow tethering without provisioning app
-ADDITIONAL_BUILD_PROPERTIES += net.tethering.noprovisioning=true
+PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
 
 # Don't Hide APNs
-ADDITIONAL_BUILD_PROPERTIES += persist.sys.hideapn=false
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.hideapn=false
