@@ -90,3 +90,6 @@ endif
 
 # include additional build utilities
 include vendor/cygnus/utils.mk
+
+# Cygnus Overlays
+include vendor/cygnus-overlays/overlays.mk
