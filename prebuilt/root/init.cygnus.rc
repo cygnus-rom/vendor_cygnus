@@ -31,3 +31,7 @@ on property:sys.io.scheduler=*
 
 on property:persist.sys.io.scheduler=*
     setprop sys.io.scheduler ${persist.sys.io.scheduler}
+
+# Start RIL Daemon
+on post-fs-data
+    start ril-daemon
