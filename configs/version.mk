@@ -31,6 +31,7 @@ PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)
 MAIN_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%m%d%H%M)
 
 PRODUCT_PROPERTY_OVERRIDES += /
+   ro.cygnus.version=$(CYGNUS_VERSION) /
    ro.system.cygnus.build=$(MAIN_VERSION) /
    ro.system.cygnus.releasetype=$(CYGNUS_BUILD_TYPE) /
    ro.system.cygnus.build.number=$(CYGNUS_BUILD_NUMBER) /
