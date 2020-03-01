@@ -107,9 +107,6 @@ include vendor/cygnus/utils.mk
 # Cygnus Overlays
 include vendor/cygnus-overlays/overlays.mk
 
-# Inter fonts
-include external/inter-fonts/fonts.mk
-
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 
