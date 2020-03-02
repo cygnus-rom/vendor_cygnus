@@ -34,8 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += /
 
 ifeq ($(CYGNUS_BUILD_TYPE),OFFICIAL)
    PRODUCT_PROPERTY_OVERRIDES += /
-       ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-OFFICIAL
+       ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-OFF
    else
        PRODUCT_PROPERTY_OVERRIDES += /
-         ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-UNOFFICIAL
+         ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-UNOFF
 endif
