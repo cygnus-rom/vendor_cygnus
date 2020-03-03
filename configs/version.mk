@@ -25,7 +25,7 @@ endif
 CYGNUS_BUILD_NUMBER := CYGQ.0$(CYGNUS_VERSION_MAJOR)$(CYGNUS_VERSION_MINOR)0.$(shell date +%Y%m%d)
 PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)--$(CYGNUS_BUILD_NUMBER)
 MAIN_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%m%d%H%M)
-CAF_REV := $(shell grep "<default revision=" manifest/codeaurora.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
+CAF_REV := $(shell grep "<default revision=" manifest/default.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
 
 PRODUCT_PROPERTY_OVERRIDES += /
    ro.cygnus.version=$(CYGNUS_VERSION) /
