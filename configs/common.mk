@@ -119,3 +119,9 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 PRODUCT_PACKAGES += \
     Trebuchet \
     TrebuchetQuickStep
+
+# Prebuilt Packages
+PRODUCT_PACKAGES += \
+	MiXplorerPrebuilt \
+	RetroMusicPlayer \
+	ViaBrowser
