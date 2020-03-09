@@ -125,3 +125,6 @@ PRODUCT_PACKAGES += \
 	MiXplorerPrebuilt \
 	RetroMusicPlayer \
 	ViaBrowser
+
+# Bootanimation
+PRODUCT_PACKAGES += bootanimation.zip
