@@ -117,7 +117,6 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Launcher
 PRODUCT_PACKAGES += \
-    Trebuchet \
     TrebuchetQuickStep
 
 # Prebuilt Packages
