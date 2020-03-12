@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
+# Version
+include vendor/cygnus/configs/version.mk
+
+# Props
+include vendor/cygnus/configs/props.mk
+
 # Enable SIP+VoIP
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
@@ -80,15 +86,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += telephony-ext
 PRODUCT_BOOT_JARS += telephony-ext
 
-# Props
-include vendor/cygnus/configs/props.mk
-
 # TCP Connection Management
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_BOOT_JARS += tcmiface
-
-# Version
-$(call inherit-product, vendor/cygnus/configs/version.mk)
 
 # World APN list
 PRODUCT_COPY_FILES += \
