@@ -17,6 +17,11 @@
 # Enable SIP+VoIP
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    vendor/cygnus/configs/permissions/privapp-permissions-google-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google.xml \
+    vendor/cygnus/configs/permissions/privapp-permissions-google.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google.xml
+
 # Include support for GApps backup
 PRODUCT_COPY_FILES += \
     vendor/cygnus/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
