@@ -22,3 +22,15 @@ cygnus: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(CYGNUS_TARGET_ZIP)
 	$(hide) $(MD5SUM) $(CYGNUS_TARGET_ZIP) | sed "s|$(PRODUCT_OUT)/||" > $(CYGNUS_TARGET_ZIP).md5sum
 	@echo "Package Complete: $(CYGNUS_TARGET_ZIP)" >&2
+	@echo -e ${CL_RED}""${CL_RED}
+	@echo -e ${CL_RED}" ▄████▄▓██   ██▓  ▄████  ███▄    █  █    ██   ██████ "${CL_RED}
+	@echo -e ${CL_RED}"▒██▀ ▀█ ▒██  ██▒ ██▒ ▀█▒ ██ ▀█   █  ██  ▓██▒▒██    ▒ "${CL_RED}
+	@echo -e ${CL_RED}"▒▓█    ▄ ▒██ ██░▒██░▄▄▄░▓██  ▀█ ██▒▓██  ▒██░░ ▓██▄   "${CL_RED}
+	@echo -e ${CL_RED}"▒▓▓▄ ▄██▒░ ▐██▓░░▓█  ██▓▓██▒  ▐▌██▒▓▓█  ░██░  ▒   ██▒"${CL_RED}
+	@echo -e ${CL_RED}"▒ ▓███▀ ░░ ██▒▓░░▒▓███▀▒▒██░   ▓██░▒▒█████▓ ▒██████▒▒"${CL_RED}
+	@echo -e ${CL_RED}"░ ░▒ ▒  ░ ██▒▒▒  ░▒   ▒ ░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░"${CL_RED}
+	@echo -e ${CL_RED}"  ░  ▒  ▓██ ░▒░   ░   ░ ░ ░░   ░ ▒░░░▒░ ░ ░ ░ ░▒  ░ ░"${CL_RED}
+	@echo -e ${CL_RED}"░       ▒ ▒ ░░  ░ ░   ░    ░   ░ ░  ░░░ ░ ░ ░  ░  ░  "${CL_RED}
+	@echo -e ${CL_RED}"░ ░     ░ ░           ░          ░    ░           ░  "${CL_RED}
+	@echo -e ${CL_RED}"░       ░ ░                                          "${CL_RED}
+	@echo -e ${CL_RED}""${CL_RED}
