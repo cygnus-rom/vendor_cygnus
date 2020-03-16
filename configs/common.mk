@@ -145,3 +145,10 @@ else
     endif
     PRODUCT_COPY_FILES += vendor/cygnus/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
+
+ifeq ($(WITH_GAPPS),true)
+      GAPPS_VARIANT := pico
+      GAPPS_FORCE_PACKAGE_OVERRIDES := true
+      GAPPS_PRODUCT_PACKAGES += CalendarGooglePrebuilt
+      include vendor/opengapps/build/opengapps-packages.mk
+endif
