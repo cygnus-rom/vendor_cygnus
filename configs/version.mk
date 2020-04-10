@@ -29,6 +29,7 @@ CAF_REV := $(shell grep "<default revision=" manifest/default.xml | awk -F'"' '{
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
    ro.cygnus.version=$(CYGNUS_VERSION) \
+   ro.cygnus.version.major=$(CYGNUS_VERSION_MAJOR) \
    ro.system.cygnus.build=$(MAIN_VERSION) \
    ro.system.cygnus.releasetype=$(CYGNUS_BUILD_TYPE) \
    ro.system.cygnus.device=$(CYGNUS_BUILD) \
