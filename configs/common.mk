@@ -23,6 +23,9 @@ include vendor/cygnus/configs/props.mk
 # Fonts
 include vendor/cygnus/configs/fonts.mk
 
+# Prebuilt apk
+include vendor/prebuilts/apps.mk
+
 # Enable SIP+VoIP
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
@@ -127,12 +130,6 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # Launcher
 PRODUCT_PACKAGES += \
     TrebuchetQuickStep
-
-# Prebuilt Packages
-PRODUCT_PACKAGES += \
-	MiXplorerPrebuilt \
-	RetroMusicPlayer \
-	ViaBrowser
 
 # Bootanimation
 ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
