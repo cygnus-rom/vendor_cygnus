@@ -22,8 +22,14 @@ ifndef CYGNUS_BUILD_TYPE
    CYGNUS_BUILD_TYPE := UNOFFICIAL
 endif
 
+ifndef WITH_GAPPS
+   CYGNUS_GAPPS := VANILLA
+else
+   CYGNUS_GAPPS := GAPPS
+endif
+
 CYGNUS_BUILD_NUMBER := CYGQ.0$(CYGNUS_VERSION_MAJOR)$(CYGNUS_VERSION_MINOR)0.$(shell date +%Y%m%d)
-PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)--$(CYGNUS_BUILD_NUMBER)
+PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)-$(CYGNUS_GAPPS)-$(CYGNUS_BUILD_NUMBER)
 MAIN_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%m%d%H%M)
 CAF_REV := $(shell grep "<default revision=" manifest/default.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
 
