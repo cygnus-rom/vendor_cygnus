@@ -156,6 +156,7 @@ ifeq ($(WITH_GAPPS),true)
       GAPPS_FORCE_PIXEL_LAUNCHER := true
       GAPPS_PRODUCT_PACKAGES += CalendarGooglePrebuilt
       GAPPS_PRODUCT_PACKAGES += Chrome
+      PRODUCT_COPY_FILES += vendor/cygnus/permissions/permissions-gapps.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/permissions-gapps.xml
       include vendor/opengapps/build/opengapps-packages.mk
 endif
 
