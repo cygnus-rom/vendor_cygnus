@@ -151,9 +151,11 @@ else
 endif
 
 ifeq ($(WITH_GAPPS),true)
-      GAPPS_VARIANT := pico
+      GAPPS_VARIANT := micro
       GAPPS_FORCE_PACKAGE_OVERRIDES := true
+      GAPPS_FORCE_PIXEL_LAUNCHER := true
       GAPPS_PRODUCT_PACKAGES += CalendarGooglePrebuilt
+      GAPPS_PRODUCT_PACKAGES += Chrome
       include vendor/opengapps/build/opengapps-packages.mk
 endif
 
