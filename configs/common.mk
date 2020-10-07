@@ -199,3 +199,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.sf.blurs_are_expensive=1 \
     ro.surface_flinger.supports_background_blur=1
+
+# Flatten APEXs for performance
+OVERRIDE_TARGET_FLATTEN_APEX := true
