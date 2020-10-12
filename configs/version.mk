@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-CYGNUS_VERSION_MAJOR := 2
-CYGNUS_VERSION_MINOR := 1.1
+CYGNUS_VERSION_MAJOR := 3
+CYGNUS_VERSION_MINOR := 0
 CYGNUS_VERSION := $(CYGNUS_VERSION_MAJOR).$(CYGNUS_VERSION_MINOR)
 
 ifndef CYGNUS_BUILD_TYPE
@@ -31,7 +31,7 @@ endif
 CYGNUS_BUILD_NUMBER := CYGQ.0$(CYGNUS_VERSION_MAJOR)$(CYGNUS_VERSION_MINOR)0.$(shell date +%Y%m%d)
 PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)-$(CYGNUS_GAPPS)-$(CYGNUS_BUILD_NUMBER)
 MAIN_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%m%d%H%M)
-CAF_REV := $(shell grep "<default revision=" manifest/default.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
+CAF_REV := LA.QSSI.11.0.r1-05600-qssi.0
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
    ro.cygnus.version=$(CYGNUS_VERSION) \
