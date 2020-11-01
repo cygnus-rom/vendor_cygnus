@@ -31,7 +31,7 @@ endif
 CYGNUS_BUILD_NUMBER := CYGQ.0$(CYGNUS_VERSION_MAJOR)$(CYGNUS_VERSION_MINOR)0.$(shell date +%Y%m%d)
 PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)-$(CYGNUS_GAPPS)-$(CYGNUS_BUILD_NUMBER)
 MAIN_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%m%d%H%M)
-CAF_REV := LA.QSSI.11.0.r1-07000-qssi.0
+CAF_REV := $(shell bash vendor/cygnus/configs/caf-tag.sh)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
    ro.cygnus.version=$(CYGNUS_VERSION) \
