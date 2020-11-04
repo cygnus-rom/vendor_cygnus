@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Component name for default assistant on this device -->
+    <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
+
+    <!-- The package name for the default wellbeing app.
+         This package must be trusted, as it has the permissions to control other applications
+         on the device.
+         Example: "com.android.wellbeing"
+     -->
+    <string name="config_defaultWellbeingPackage">com.google.android.apps.wellbeing</string>
+
+    <!-- The component name, flattened to a string, for the default autofill service
+         to  enabled for an user. This service must be trusted, as it can be activated
+         without explicit consent of the user. If no autofill service with the
+          specified name exists on the device, autofill will be disabled by default.
+    -->
+    <string name="config_defaultAutofillService" translatable="false">com.google.android.gms/.autofill.service.AutofillService</string>
+
+    <!--  Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
+    <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">8</integer>
+
+    <!-- List of packages that can use the Conversation space for their category messages
+    notifications until they target R -->
+    <string-array name="config_notificationMsgPkgsAllowedAsConvos">
+        <item>com.facebook.orca</item>
+        <item>com.instagram.android</item>
+        <item>com.whatsapp</item>
+        <item>com.snapchat.android</item>
+        <item>jp.naver.line.android</item>
+        <item>com.kakao.talk</item>
+        <item>com.discord</item>
+        <item>org.thoughtcrime.securesms</item>
+        <item>com.groupme.android</item>
+        <item>org.telegram.messenger</item>
+        <item>com.twitter.android</item>
+        <item>com.viber.voip</item>
+        <item>com.linkedin.android</item>
+        <item>com.tencent.mm</item>
+        <item>com.Slack</item>
+    </string-array>
+
+
+    <!-- Flag indicating which package name can access DeviceConfig table -->
+    <string name="config_deviceConfiguratorPackageName" translatable="false">org.protonaosp.deviceconfig</string>
+</resources>
