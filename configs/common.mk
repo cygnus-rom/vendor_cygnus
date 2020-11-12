@@ -160,3 +160,5 @@ ifeq ($(WITH_GAPPS),true)
       include vendor/opengapps/build/opengapps-packages.mk
 endif
 
+# Inherit from Cygnus common tree.
+include device/cygnus/common/common.mk
