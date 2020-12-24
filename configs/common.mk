@@ -208,6 +208,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/qcom/common/common.mk)
 
 PRODUCT_PACKAGES += \
+    FontManropeOverlay \
     FontOnePlusSansOverlay
 
 # Permissions
