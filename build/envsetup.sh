@@ -97,3 +97,10 @@ function merge-caf() {
         done
     echo "Done"
 }
+function globexists {
+   test -e "$1" -o -L "$1"
+}
+cd packages/apps/Settings && if ! globexists Spaces* ; then
+ln -s ../Spaceship Spaceship 
+fi
+cd ../../..
