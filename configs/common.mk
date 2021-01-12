@@ -151,13 +151,7 @@ else
 endif
 
 ifeq ($(WITH_GAPPS),true)
-      GAPPS_VARIANT := micro
-      GAPPS_FORCE_PACKAGE_OVERRIDES := true
-      GAPPS_FORCE_PIXEL_LAUNCHER := true
-      GAPPS_PRODUCT_PACKAGES += CalendarGooglePrebuilt
-      GAPPS_PRODUCT_PACKAGES += Chrome
-      PRODUCT_COPY_FILES += vendor/cygnus/permissions/permissions-gapps.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/permissions-gapps.xml
-      include vendor/opengapps/build/opengapps-packages.mk
+      $(call inherit-product-if-exists, vendor/google/gms/config.mk)
 endif
 
 # Inherit from Cygnus common tree.
