@@ -73,7 +73,8 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat \
     ntfsfix \
-    ntfs-3g
+    ntfs-3g \
+    libjson
 
 # Bluetooth Audio (A2DP)
 PRODUCT_PACKAGES += libbthost_if
