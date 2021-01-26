@@ -43,7 +43,7 @@ except ImportError:
 DEBUG = False
 
 custom_local_manifest = ".repo/local_manifests/cygnus.xml"
-custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'caf-ten')
+custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'caf-11')
 custom_dependencies = "cygnus.dependencies"
 org_manifest = "Cygnus-devices"  # leave empty if org is provided in manifest
 org_display = "Cygnus-devices"  # needed for displaying
