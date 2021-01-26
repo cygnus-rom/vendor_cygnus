@@ -13,6 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+BUILD_ID_LC := $(shell echo $(BUILD_ID) | tr '[:upper:]' '[:lower:]')
+$(call inherit-product-if-exists, vendor/cygnus/build/target/product/security/cygnus_security.mk)
+PROD_VERSION += Cygnus-$(CYGNUS_VERSION_MAJOR).$(CYGNUS_VERSION_MINOR)-$(TARGET_PRODUCT)-ota-$(BUILD_ID_LC)-REL.$(BUILD_NUMBER_FROM_FILE)
+
+PRODUCT_HOST_PACKAGES += \
+    signapk \
+    avbtool \
+    brotli \
+    aapt2 \
+    deapexer \
+    debugfs \
+    zipalign \
+    apexer
+
+
 
 CYGNUS_VERSION_MAJOR := 3
 CYGNUS_VERSION_MINOR := 0
