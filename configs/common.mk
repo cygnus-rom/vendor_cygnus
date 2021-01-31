@@ -174,9 +174,12 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
-#QTI BT
+# QTI BT
 include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk)
+
+# Common
+$(call inherit-product, device/qcom/common/common.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
