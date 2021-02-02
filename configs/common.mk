@@ -178,6 +178,7 @@ $(call inherit-product, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-syste
 
 # Accents
 PRODUCT_PACKAGES += \
+    AccentColoriOSBlueOverlay \
     AccentColorHadalZoneOverlay \
     AccentColorLostInForestOverlay \
     AccentColorMagentaOverlay \
@@ -190,6 +191,7 @@ PRODUCT_PACKAGES += \
     AccentColorSuperNovaOverlay \
     AccentColorTealOverlay \
     AccentColorTorchRedOverlay
+
 
 # Fonts
 PRODUCT_COPY_FILES += \
