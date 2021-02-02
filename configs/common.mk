@@ -178,6 +178,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk)
 
+# Fonts
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/cygnus/prebuilt/fonts/,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    $(call find-copy-subdir-files,*,vendor/cygnus/prebuilt/fonts-system/,$(TARGET_COPY_OUT_SYSTEM)/fonts) \
+    vendor/cygnus/prebuilt/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+
 # Common
 $(call inherit-product, device/qcom/common/common.mk)
 
