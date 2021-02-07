@@ -164,13 +164,18 @@ include device/cygnus/common/common.mk
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
 
-ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED), false)
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+
 PRODUCT_PACKAGES += \
     FaceUnlockService
-endif
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
+    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+
+endif
 
 # QTI BT
 include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
