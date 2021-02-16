@@ -33,7 +33,7 @@ PACKAGE_VERSION := Cygnus-$(CYGNUS_VERSION)-$(CYGNUS_BUILD_TYPE)-$(CYGNUS_BUILD)
 MAIN_VERSION := Cygnus-$(CYGNUS_VERSION)-$(shell date +%m%d%H%M)
 CAF_REV := $(shell bash vendor/cygnus/configs/caf-tag.sh)
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+ADDITIONAL_BUILD_PROPERTIES += \
    ro.cygnus.version=$(CYGNUS_VERSION) \
    ro.cygnus.version.major=$(CYGNUS_VERSION_MAJOR) \
    ro.system.cygnus.build=$(MAIN_VERSION) \
@@ -41,10 +41,3 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
    ro.system.cygnus.device=$(CYGNUS_BUILD) \
    ro.caf.tag=$(CAF_REV)
 
-ifeq ($(CYGNUS_BUILD_TYPE),OFFICIAL)
-   PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-       ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-OFF
-   else
-       PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-         ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-UNOFF
-endif

@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-# Version
-include vendor/cygnus/configs/version.mk
 
 # Props
 include vendor/cygnus/configs/props.mk

@@ -40,3 +40,11 @@ PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
 
 # Don't Hide APNs
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.hideapn=false
+
+ifeq ($(CYGNUS_BUILD_TYPE),OFFICIAL)
+   PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+       ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-OFF
+   else
+       PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+         ro.cygnus.build.number=$(CYGNUS_BUILD_NUMBER)-UNOFF
+endif
