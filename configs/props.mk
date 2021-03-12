@@ -35,6 +35,9 @@ else
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0
 endif
 
+# Build Fingerprint
+BUILD_FINGERPRINT ?= google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys
+
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
 
