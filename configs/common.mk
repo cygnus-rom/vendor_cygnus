@@ -176,6 +176,21 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk)
 
+# Accents
+PRODUCT_PACKAGES += \
+    AccentColorHadalZoneOverlay \
+    AccentColorLostInForestOverlay \
+    AccentColorMagentaOverlay \
+    AccentColorPixelBlueOverlay \
+    AccentColorPurpleHeatOverlay \
+    AccentColorRedOverlay \
+    AccentColorRoseOverlay \
+    AccentColorScooterOverlay \
+    AccentColorSlateOverlay \
+    AccentColorSuperNovaOverlay \
+    AccentColorTealOverlay \
+    AccentColorTorchRedOverlay
+
 # Fonts
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/cygnus/prebuilt/fonts/,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
