@@ -58,9 +58,9 @@ PRODUCT_COPY_FILES += \
     vendor/cygnus/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
     vendor/cygnus/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
 
-# Build Snapdragon apps
+# Build Themepicker
 PRODUCT_PACKAGES += \
-    SnapdragonGallery
+    ThemePicker
 
 # Offline charger
 PRODUCT_PACKAGES += \
