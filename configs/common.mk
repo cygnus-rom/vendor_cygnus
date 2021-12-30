@@ -24,6 +24,9 @@ include vendor/cygnus/configs/fonts.mk
 # Prebuilt apk
 include vendor/prebuilts/apps.mk
 
+# QCOM common
+include device/qcom/common/Android.mk
+
 # Enable SIP+VoIP
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
