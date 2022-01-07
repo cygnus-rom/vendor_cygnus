@@ -158,7 +158,7 @@ else
 endif
 
 ifeq ($(WITH_GAPPS),true)
-      $(call inherit-product-if-exists, vendor/google/gms/config.mk)
+      $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 endif
 
 # Inherit from Cygnus common tree.
