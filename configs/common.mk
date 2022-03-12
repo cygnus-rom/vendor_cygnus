@@ -21,8 +21,7 @@ include vendor/cygnus/configs/props.mk
 # Fonts
 include vendor/cygnus/configs/fonts.mk
 
-# Prebuilt apk
-include vendor/prebuilts/apps.mk
+
 
 # QCOM common
 include device/qcom/common/Android.mk
