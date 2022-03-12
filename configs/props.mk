@@ -35,9 +35,6 @@ else
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0
 endif
 
-# Build Fingerprint
-BUILD_FINGERPRINT ?= google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys
-
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
 
