@@ -60,9 +60,10 @@ PRODUCT_COPY_FILES += \
     vendor/cygnus/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
     vendor/cygnus/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept
 
-# Build Themepicker
+# Build Themepicker and Servicetracker
 PRODUCT_PACKAGES += \
-    ThemePicker
+    ThemePicker \
+    vendor.qti.hardware.servicetracker@1.2.vendor
 
 # Offline charger
 PRODUCT_PACKAGES += \
@@ -87,7 +88,7 @@ PRODUCT_PACKAGES += libbthost_if
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += libprotobuf-cpp-full
 
-# RCS Service
+# RCS Service and more
 PRODUCT_PACKAGES += \
     rcscommon \
     rcscommon.xml \
@@ -96,6 +97,13 @@ PRODUCT_PACKAGES += \
     rcs_service_aidl.xml \
     rcs_service_aidl_static \
     rcs_service_api \
+    extphonelib \
+
+    extphonelib-product \
+
+    extphonelib.xml \
+
+    extphonelib_product.xml \
     rcs_service_api.xml
 
 # MSIM manual provisioning
