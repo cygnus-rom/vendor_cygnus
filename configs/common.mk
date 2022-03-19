@@ -98,11 +98,8 @@ PRODUCT_PACKAGES += \
     rcs_service_aidl_static \
     rcs_service_api \
     extphonelib \
-
     extphonelib-product \
-
     extphonelib.xml \
-
     extphonelib_product.xml \
     rcs_service_api.xml
 
@@ -248,3 +245,7 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 WITH_DEXPREOPT_DEBUG_INFO := false
 USE_DEX2OAT_DEBUG := false
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
