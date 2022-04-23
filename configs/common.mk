@@ -115,18 +115,6 @@ PRODUCT_BOOT_JARS += tcmiface
 PRODUCT_COPY_FILES += \
     vendor/cygnus/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
-ifneq ($(HOST_OS),linux)
-ifneq ($(sdclang_already_warned),true)
-$(warning **********************************************)
-$(warning * SDCLANG is not supported on non-linux hosts.)
-$(warning **********************************************)
-sdclang_already_warned := true
-endif
-else
-# include definitions for SDCLANG
-include vendor/cygnus/sdclang/sdclang.mk
-endif
-
 # include additional build utilities
 include vendor/cygnus/utils.mk
 
