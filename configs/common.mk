@@ -37,7 +37,8 @@ DISABLE_EAP_PROXY := true
 # Permissions
 PRODUCT_COPY_FILES += \
     vendor/cygnus/configs/permissions/privapp-permissions-google-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google.xml \
-    vendor/cygnus/configs/permissions/privapp-permissions-google.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google.xml
+    vendor/cygnus/configs/permissions/privapp-permissions-google.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google.xml \
+    vendor/cygnus/prebuilt/OutlineTiles.apk:$(TARGET_COPY_OUT_SYSTEM)/product/overlay/OutlineTiles.apk
 
 # Include support for GApps backup
 PRODUCT_COPY_FILES += \
