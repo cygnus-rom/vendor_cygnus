@@ -24,9 +24,6 @@ include vendor/cygnus/configs/fonts.mk
 # QCOM common
 include device/qcom/common/Android.mk
 
-# Sepolicy
-include device/cygnus/sepolicy/qcom/sepolicy.mk
-
 # Include definitions for Snapdragon Clang
 $(call inherit-product, vendor/qcom/sdclang/config/SnapdragonClang.mk)
 
